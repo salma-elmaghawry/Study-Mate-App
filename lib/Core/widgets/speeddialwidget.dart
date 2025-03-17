@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
+import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 
 class Speeddialwidget extends StatelessWidget {
-  const Speeddialwidget({
-    super.key,
-  });
+  const Speeddialwidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,8 @@ class Speeddialwidget extends StatelessWidget {
       spaceBetweenChildren: 12,
       children: [
         SpeedDialChild(
+          label: "Add Note",
+          labelStyle: AppTextStyles.poppins_14_regular,
           shape: CircleBorder(),
           child: SvgPicture.asset(AppIcons.note, color: Colors.deepPurple),
           backgroundColor: Colors.white,
@@ -29,6 +31,8 @@ class Speeddialwidget extends StatelessWidget {
         ),
         SpeedDialChild(
           shape: CircleBorder(),
+          label: "Music",
+          labelStyle: AppTextStyles.poppins_14_regular,
           child: SvgPicture.asset(AppIcons.music, color: Colors.deepPurple),
           backgroundColor: Colors.white,
           onTap: () {
@@ -36,6 +40,9 @@ class Speeddialwidget extends StatelessWidget {
           },
         ),
       ],
+      activeIcon: Icons.close,
+      activeBackgroundColor: AppColors.white,
+
       child: Container(
         width: 65,
         height: 65,

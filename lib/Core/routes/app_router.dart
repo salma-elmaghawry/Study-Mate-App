@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
-import 'package:study_mate/Features/Home/home_screen.dart';
-import 'package:study_mate/Features/Home/nav_bar.dart';
+import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
+import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
 import 'package:study_mate/Features/Music/music_screen.dart';
 import 'package:study_mate/Features/Notes/notes_screen.dart';
 import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';

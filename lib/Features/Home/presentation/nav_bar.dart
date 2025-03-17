@@ -5,7 +5,7 @@ import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/widgets/speeddialwidget.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
-import 'package:study_mate/Features/Home/home_screen.dart';
+import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';
 import 'package:study_mate/Features/Summarization/summarization_screen.dart';
 

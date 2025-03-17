@@ -1,5 +1,7 @@
 class AppImages {
   static const String logo = 'assets/images/logo.png';
+  static const String prize = 'assets/images/prize.png';
+  static const String fly = 'assets/images/fly.png';
 }
 
 class AppIcons {
@@ -15,4 +17,10 @@ class AppIcons {
   static const String pomodorofilled = 'assets/icons/pomodorofilled.svg';
   static const String music = 'assets/icons/music.svg';
   static const String note = 'assets/icons/note.svg';
+  static const String cancel = 'assets/icons/cancel.svg';
+  static const String correct = 'assets/icons/correct.svg';
+  static const String notification = 'assets/icons/notification.svg';
+  static const String settings = 'assets/icons/settings.svg';
+  static const String user = 'assets/icons/user.svg';
+  static const String search = 'assets/icons/search.svg';
 }

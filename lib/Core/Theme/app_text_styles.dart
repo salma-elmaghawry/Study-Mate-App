@@ -14,6 +14,10 @@ class AppTextStyles {
     fontSize: 18,
     fontWeight: FontWeight.normal,
   );
+  static TextStyle Quicksand_18_bold = GoogleFonts.quicksand(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle poppins_16_regular = GoogleFonts.poppins(
     fontSize: 16,
     fontWeight: FontWeight.normal,
