@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_mate/Core/Theme/app_text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,8 +7,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('This is the home screen', style: TextStyle(fontSize: 24)),
+      appBar: AppBar(title: const Text('Home Screen')),
+      body: Center(
+        child: Text('Home Screen', style: AppTextStyles.Quicksand_24_Bold),
       ),
     );
   }

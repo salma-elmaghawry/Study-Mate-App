@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class FlashCardsScreen extends StatelessWidget {
-  const FlashCardsScreen({super.key});
+class MusicScreen extends StatelessWidget {
+  const MusicScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flash Cards')),
+      appBar: AppBar(title: const Text('Music')),
       body: const Center(
         child: Text(
-          'This is the flash cards screen',
+          'This is the music screen',
           style: TextStyle(fontSize: 24),
         ),
       ),

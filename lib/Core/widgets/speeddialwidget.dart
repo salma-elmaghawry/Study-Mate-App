@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:study_mate/Core/Theme/app_images.dart';
+import 'package:study_mate/Core/routes/routes.dart';
+
+class Speeddialwidget extends StatelessWidget {
+  const Speeddialwidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SpeedDial(
+      backgroundColor: Colors.transparent,
+      overlayColor: Colors.black54,
+      overlayOpacity: 0.3,
+      spacing: 10, // Space between children
+      direction: SpeedDialDirection.up, // Expands children horizontally
+      spaceBetweenChildren: 12,
+      children: [
+        SpeedDialChild(
+          shape: CircleBorder(),
+          child: SvgPicture.asset(AppIcons.note, color: Colors.deepPurple),
+          backgroundColor: Colors.white,
+          onTap: () {
+            Navigator.pushNamed(context, Routes.notes);
+          },
+        ),
+        SpeedDialChild(
+          shape: CircleBorder(),
+          child: SvgPicture.asset(AppIcons.music, color: Colors.deepPurple),
+          backgroundColor: Colors.white,
+          onTap: () {
+            Navigator.pushNamed(context, Routes.music);
+          },
+        ),
+      ],
+      child: Container(
+        width: 65,
+        height: 65,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            colors: [Color(0xFFCAA1FF), Color(0xFF3C0AA4)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: SvgPicture.asset(AppIcons.plus, color: Colors.white),
+        ),
+      ),
+    );
+  }
+}
