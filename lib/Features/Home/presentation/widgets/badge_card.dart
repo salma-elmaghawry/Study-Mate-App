@@ -6,10 +6,15 @@ import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Features/Home/presentation/widgets/custom_slider.dart';
 
-class BadgeCard extends StatelessWidget {
-  BadgeCard({super.key, this.earnedValue = 600});
+class BadgeCard extends StatefulWidget {
+  BadgeCard({super.key, this.earnedValue = 700});
   int earnedValue;
 
+  @override
+  State<BadgeCard> createState() => _BadgeCardState();
+}
+
+class _BadgeCardState extends State<BadgeCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,7 +55,7 @@ class BadgeCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "$earnedValue XP ",
+                    "${widget.earnedValue} XP ",
                     style: GoogleFonts.quicksand(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
@@ -62,19 +67,19 @@ class BadgeCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 150),
-                child: CustomSlider(value: earnedValue.toDouble()),
+                child: CustomSlider(value: widget.earnedValue.toDouble()),
               ),
               Flexible(
                 flex: 5,
                 child: Text(
-                  "$earnedValue out of 1000 XP",
+                  "${widget.earnedValue} out of 1000 XP",
                   style: AppTextStyles.poppins12Regular(color: AppColors.white),
                 ),
               ),
             ],
           ),
           Positioned(
-            right: -40,
+            right: -30,
 
             top: -15,
             bottom: -15,
