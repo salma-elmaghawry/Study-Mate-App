@@ -23,7 +23,13 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => FlashCardsScreen());
       case Routes.pomodoro:
         return MaterialPageRoute(builder: (_) => PomodoroScreen());
-         case Routes.music:
+      case Routes.music:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
+      case Routes.profile:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
+      case Routes.notifications:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
+      case Routes.settings:
         return MaterialPageRoute(builder: (_) => MusicScreen());
 
       // case '/register':

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:study_mate/Core/Theme/app_images.dart';
+import 'package:study_mate/Core/Theme/app_strings.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Core/widgets/custom_appBar.dart';
+import 'package:study_mate/Core/widgets/custom_text_field.dart';
+import 'package:study_mate/Features/Home/presentation/widgets/badge_card.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -9,17 +15,36 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppbar(),
+        appBar: CustomAppbar(
+          leading: GestureDetector(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 15,
+                top: 8,
+                bottom: 8,
+                right: 5,
+              ),
+              child: SvgPicture.asset(AppIcons.user),
+            ),
+            onTap: () => Navigator.pushNamed(context, Routes.profile),
+          ),
+        ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SearchBar(),
+              CustomTextField(
+                hintText: AppStrings.search,
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(AppIcons.search),
+                ),
+              ),
               SizedBox(height: 20),
-              XPProgressCard(),
+              BadgeCard(),
               SizedBox(height: 20),
-              Text("Daily Goals", style: AppTextStyles.Quicksand_18_bold),
+              Text("Daily Goals", style: AppTextStyles.quicksand18BoldB()),
               Expanded(
                 child: ListView(
                   children: [
@@ -50,54 +75,6 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.purple,
           child: Icon(Icons.add, color: Colors.white),
         ),
-      ),
-    );
-  }
-}
-
-class SearchBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        hintText: "Search",
-        prefixIcon: Icon(Icons.search),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        filled: true,
-        fillColor: Colors.grey[200],
-      ),
-    );
-  }
-}
-
-class XPProgressCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: Colors.purple,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Lvl 3",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 5),
-          Text(
-            "Well Done Champ!\n750 XP Earned...",
-            style: TextStyle(color: Colors.white),
-          ),
-          SizedBox(height: 10),
-          LinearProgressIndicator(
-            value: 750 / 1000,
-            color: Colors.orange,
-            backgroundColor: Colors.white,
-          ),
-        ],
       ),
     );
   }

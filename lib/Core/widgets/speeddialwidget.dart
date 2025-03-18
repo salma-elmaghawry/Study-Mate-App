@@ -21,10 +21,10 @@ class Speeddialwidget extends StatelessWidget {
       children: [
         SpeedDialChild(
           label: "Add Note",
-          labelStyle: AppTextStyles.poppins_14_regular,
+          labelStyle: AppTextStyles.poppins12Regular(),
           shape: CircleBorder(),
-          child: SvgPicture.asset(AppIcons.note, color: Colors.deepPurple),
-          backgroundColor: Colors.white,
+          child: SvgPicture.asset(AppIcons.note, color: AppColors.primary),
+          backgroundColor: AppColors.white,
           onTap: () {
             Navigator.pushNamed(context, Routes.notes);
           },
@@ -32,8 +32,8 @@ class Speeddialwidget extends StatelessWidget {
         SpeedDialChild(
           shape: CircleBorder(),
           label: "Music",
-          labelStyle: AppTextStyles.poppins_14_regular,
-          child: SvgPicture.asset(AppIcons.music, color: Colors.deepPurple),
+          labelStyle: AppTextStyles.poppins14Regular(),
+          child: SvgPicture.asset(AppIcons.music, color: AppColors.primary),
           backgroundColor: Colors.white,
           onTap: () {
             Navigator.pushNamed(context, Routes.music);
@@ -49,13 +49,13 @@ class Speeddialwidget extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
-            colors: [Color(0xFFCAA1FF), Color(0xFF3C0AA4)],
+            colors: [AppColors.secondary, AppColors.primary],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: Center(
-          child: SvgPicture.asset(AppIcons.plus, color: Colors.white),
+          child: SvgPicture.asset(AppIcons.plus, color: AppColors.white),
         ),
       ),
     );

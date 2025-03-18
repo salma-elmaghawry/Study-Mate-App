@@ -35,6 +35,7 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   flutter_speed_dial: ^7.0.0
   flutter_svg: ^2.0.17
+  flutter_xlider: ^3.5.0
   google_fonts: ^6.2.1
   shared_preferences: ^2.5.2
 

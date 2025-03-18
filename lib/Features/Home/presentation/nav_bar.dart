@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/widgets/speeddialwidget.dart';
@@ -39,6 +40,7 @@ class _NavBarState extends State<NavBar> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: Container(
+        height: 65.h, // Keep the height at 70.h
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -52,18 +54,16 @@ class _NavBarState extends State<NavBar> {
         child: BottomAppBar(
           shape: CircularNotchedRectangle(),
           color: AppColors.white,
-
-          height: 65.h,
-
           notchMargin: 8.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              buildNavItem(AppIcons.home, 0),
-              buildNavItem(AppIcons.summarization, 1),
-              SizedBox(width: 48), // Space for FloatingActionButton
-              buildNavItem(AppIcons.flashcards, 2),
-              buildNavItem(AppIcons.pomodoro, 3),
+              buildNavItem(AppIcons.home, 0, 'Home'),
+              buildNavItem(AppIcons.summarization, 1, 'Summarize'),
+              SizedBox(width: 56.w), // Adjusted width for FloatingActionButton
+              buildNavItem(AppIcons.flashcards, 2, 'Flashcards'),
+              buildNavItem(AppIcons.pomodoro, 3, 'Pomodoro'),
             ],
           ),
         ),
@@ -71,15 +71,33 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
-  Widget buildNavItem(String iconPath, int index) {
+  Widget buildNavItem(String iconPath, int index, String title) {
     bool isSelected = _selectedIndex == index;
 
-    return IconButton(
-      icon: SvgPicture.asset(
-        iconPath,
-        color: isSelected ? AppColors.primary : Colors.grey,
+    return GestureDetector(
+      onTap: () => _onItemTapped(index),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment:
+            MainAxisAlignment.center, // Center the content vertically
+        children: [
+          SvgPicture.asset(
+            iconPath,
+            color: isSelected ? AppColors.primary : Colors.grey,
+            height: 20.h, // Reduced icon size
+            width: 20.h,
+          ),
+          SizedBox(height: 4.h), // Space between icon and title
+          Text(
+            title,
+            style: GoogleFonts.poppins(
+              color: isSelected ? AppColors.primary : Colors.grey,
+              fontSize: 10.sp, // Reduced font size
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ],
       ),
-      onPressed: () => _onItemTapped(index),
     );
   }
 }
