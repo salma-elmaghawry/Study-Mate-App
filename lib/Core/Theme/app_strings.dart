@@ -1,6 +1,11 @@
 class AppStrings {
   static const String appName = 'Flutter Starter';
   static const String home = 'Home';
+  static const String hello = 'Hello, ';
+  static const String search = 'Search';
+  static const String profile = 'Profile';
+  static const String notifications = 'Notifications';
+
   static const String settings = 'Settings';
   static const String darkMode = 'Dark Mode';
   static const String lightMode = 'Light Mode';
