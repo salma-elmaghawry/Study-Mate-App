@@ -7,10 +7,16 @@ import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Core/widgets/custom_appBar.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
 import 'package:study_mate/Features/Home/presentation/widgets/badge_card.dart';
+import 'package:study_mate/Features/Home/presentation/widgets/goal_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,17 +57,18 @@ class HomeScreen extends StatelessWidget {
                     GoalTile(
                       title: "Make 2 Flashcard sets",
                       progress: "1 / 2",
-                      xp: "20 XP",
+                      xp: 20,
                     ),
                     GoalTile(
                       title: "Summarize 5 Files",
                       progress: "0 / 5",
-                      xp: "50 XP",
+                      xp: 20,
                     ),
                     GoalTile(
                       title: "Practice 2 Quizzes",
                       progress: "2 / 2",
-                      xp: "20 XP",
+                      xp: 20,
+
                       isCompleted: true,
                     ),
                   ],
@@ -75,32 +82,6 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.purple,
           child: Icon(Icons.add, color: Colors.white),
         ),
-      ),
-    );
-  }
-}
-
-class GoalTile extends StatelessWidget {
-  final String title;
-  final String progress;
-  final String xp;
-  final bool isCompleted;
-
-  GoalTile({
-    required this.title,
-    required this.progress,
-    required this.xp,
-    this.isCompleted = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Checkbox(value: isCompleted, onChanged: (value) {}),
-        title: Text(title),
-        subtitle: Text("Gain $xp"),
-        trailing: Text(progress),
       ),
     );
   }
