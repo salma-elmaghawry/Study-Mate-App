@@ -12,12 +12,13 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        shape: BoxShape.rectangle,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1), // Shadow color
             blurRadius: 10, // Blur effect
             spreadRadius: 1, // How much it spreads
-            offset: Offset(0, 2), // Shadow position (downward)
+            offset: Offset(0, 2),
           ),
         ],
       ),
