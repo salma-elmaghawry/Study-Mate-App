@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
+import 'package:study_mate/Core/routes/routes.dart' show Routes;
 import 'package:study_mate/Core/widgets/speeddialwidget.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
@@ -34,8 +35,25 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex], // Display selected page
+      body: Stack(
+        children: [
+          _pages[_selectedIndex], // Display selected page
+          // Positioned Character (Floating SVG)
+          Positioned(
+            bottom:
+                10.h, // Adjust this value to position above the bottom navigation bar
+            right: 20.w, // Positioning on the right side
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.chatbot);
+              },
+              child: Image.asset(AppImages.milo, width: 70.w),
+            ),
+          ),
+        ],
+      ),
 
+      // Display selected page
       floatingActionButton: Speeddialwidget(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 

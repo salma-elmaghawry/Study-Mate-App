@@ -5,6 +5,7 @@ class AppImages {
   static const String bluefolder = 'assets/images/bluefolder.png';
   static const String yellowfolder = 'assets/images/yellowfolder.png';
   static const String notes = 'assets/images/notes.png';
+  static const String milo = 'assets/images/Milo.png';
 }
 
 class AppIcons {
@@ -30,4 +31,8 @@ class AppIcons {
   static const String upload = 'assets/icons/upload.svg';
   static const String fav = 'assets/icons/fav.svg';
   static const String favfilled = 'assets/icons/fav_filled.svg';
+  static const String rename = 'assets/icons/rename.svg';
+  static const String delete = 'assets/icons/delete.svg';
+  static const String share = 'assets/icons/share.svg';
+  static const String milo = 'assets/icons/milo.svg';
 }
