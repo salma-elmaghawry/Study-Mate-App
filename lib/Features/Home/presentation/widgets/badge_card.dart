@@ -27,7 +27,6 @@ class _BadgeCardState extends State<BadgeCard> {
           BoxShadow(
             color: Colors.black.withOpacity(0.2), // Shadow color
             blurRadius: 10, // Blur effect
-            spreadRadius: 2, // Spread of the shadow
             offset: Offset(0, 4), // Shadow position
           ),
         ],
@@ -79,11 +78,10 @@ class _BadgeCardState extends State<BadgeCard> {
             ],
           ),
           Positioned(
-            right: -30,
-
-            top: -15,
-            bottom: -15,
-            child: Image.asset(AppImages.fly, width: 180.w, height: 150.h),
+            right: -23,
+            top: -5,
+            bottom: -10,
+            child: Image.asset(AppImages.fly, width: 170.w, height: 190.h),
           ),
         ],
       ),
