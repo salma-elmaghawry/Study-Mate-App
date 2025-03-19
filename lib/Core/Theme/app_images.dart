@@ -2,6 +2,9 @@ class AppImages {
   static const String logo = 'assets/images/logo.png';
   static const String prize = 'assets/images/prize.png';
   static const String fly = 'assets/images/fly.png';
+  static const String bluefolder = 'assets/images/bluefolder.png';
+  static const String yellowfolder = 'assets/images/yellowfolder.png';
+  static const String notes = 'assets/images/notes.png';
 }
 
 class AppIcons {
@@ -23,4 +26,8 @@ class AppIcons {
   static const String settings = 'assets/icons/settings.svg';
   static const String user = 'assets/icons/user.svg';
   static const String search = 'assets/icons/search.svg';
+  static const String quiz = 'assets/icons/quiz.svg';
+  static const String upload = 'assets/icons/upload.svg';
+  static const String fav = 'assets/icons/fav.svg';
+  static const String favfilled = 'assets/icons/fav_filled.svg';
 }
