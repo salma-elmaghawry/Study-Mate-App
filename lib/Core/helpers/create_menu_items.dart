@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
+import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 
 PopupMenuItem<String> buildPopupMenuItem(
@@ -59,12 +60,22 @@ void deleteAction(BuildContext context) {
     context: context,
     builder:
         (context) => AlertDialog(
-          title: Text("Delete Document"),
-          content: Text("Are you sure you want to delete this document?"),
+          icon: SvgPicture.asset(AppIcons.delete),
+          title: Text(
+            "Delete Document",
+            style: AppTextStyles.poppins14Regular(color: AppColors.grey),
+          ),
+          content: Text(
+            "Are you sure you want to delete this document?",
+            style: AppTextStyles.poppins14Regular(color: AppColors.grey),
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text("Cancel"),
+              child: Text(
+                "Cancel",
+                style: AppTextStyles.poppins14Regular(color: AppColors.grey),
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -72,7 +83,10 @@ void deleteAction(BuildContext context) {
                 print("Deleted $title");
                 Navigator.pop(context);
               },
-              child: Text("Delete", style: TextStyle(color: Colors.red)),
+              child: Text(
+                "Delete",
+                style: AppTextStyles.poppins14Regular(color: AppColors.red),
+              ),
             ),
           ],
         ),
