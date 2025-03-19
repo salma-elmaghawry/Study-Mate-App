@@ -35,7 +35,7 @@ class DocsTile extends StatelessWidget {
           maxLines: 1,
           style: AppTextStyles.poppins14Regular(color: AppColors.grey),
         ),
-        contentPadding: EdgeInsets.all(7),
+        contentPadding: EdgeInsets.only(left: 10, right: 2),
         trailing: PopupMenuButton<String>(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(15),
@@ -60,5 +60,4 @@ class DocsTile extends StatelessWidget {
   }
 
   // Helper function to create menu items
- 
 }

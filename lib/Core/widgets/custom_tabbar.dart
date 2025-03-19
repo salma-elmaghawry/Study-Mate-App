@@ -52,6 +52,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
                   color: isSelected ? AppColors.primary : AppColors.grey,
                 ),
                 borderRadius: BorderRadius.circular(33),
+                
               ),
               child: Row(
                 children: [

@@ -33,6 +33,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => MusicScreen());
       case Routes.quiz:
         return MaterialPageRoute(builder: (_) => MusicScreen());
+        case Routes.chatbot:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
 
       // case '/register':
       //   return MaterialPageRoute(builder: (_) => RegisterScreen());

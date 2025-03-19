@@ -39,8 +39,9 @@ class _HomeBodyState extends State<HomeBody> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //SizedBox(height: 10.h),
               Text("Daily Goals", style: AppTextStyles.quicksand18BoldB()),
-              SizedBox(height: 10.h),
+              SizedBox(height: 5.h),
               Column(
                 children: [
                   GoalTile(
@@ -61,14 +62,16 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ],
               ),
-              SizedBox(height: 15.h),
+              SizedBox(height: 20.h),
               Text("Quick Access", style: AppTextStyles.quicksand18BoldB()),
-              SizedBox(height: 10.h),
-
+              SizedBox(height: 5.h),
               QuickAccessGrid(),
-              SizedBox(height: 15.h),
+              SizedBox(height: 20.h),
               Text("My Files", style: AppTextStyles.quicksand18BoldB()),
+              SizedBox(height: 5.h),
               MyFilesSection(),
+
+              SizedBox(height: 15.h),
             ],
           ),
         ],

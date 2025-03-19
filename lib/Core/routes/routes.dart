@@ -14,4 +14,5 @@ class Routes {
   static const String notifications = '/notifications';
   static const String theme = '/theme';
   static const String profile = '/profile';
+  static const String chatbot ="/chatbot";
 }

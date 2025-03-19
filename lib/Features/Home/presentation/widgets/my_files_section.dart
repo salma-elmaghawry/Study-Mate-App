@@ -30,20 +30,20 @@ class _MyFilesSectionState extends State<MyFilesSection> {
           },
         ),
 
-        SizedBox(height: 15.h),
+        SizedBox(height: 10.h),
         DocsTile(
           imagePath: AppImages.bluefolder,
-          title: "SUmmarixe of lec 1 ",
+          title: "Summarize of lec 1 ",
           date: "19 Mrach 2025",
         ),
         DocsTile(
           imagePath: AppImages.yellowfolder,
-          title: "SUmmarixe of lec 1 ",
+          title: "Uploaded lec 1 ",
           date: "19 Mrach 2025",
         ),
         DocsTile(
           imagePath: AppImages.notes,
-          title: "SUmmarixe of lec 1 ",
+          title: "Notes on lec 1 ",
           date: "19 Mrach 2025",
         ),
       ],
