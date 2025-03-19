@@ -29,11 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: CustomAppbar(),
           ),
           body: HomeBody(),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: Colors.purple,
-            child: Icon(Icons.add, color: Colors.white),
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //   onPressed: () {},
+          //   backgroundColor: Colors.purple,
+          //   child: Icon(Icons.add, color: Colors.white),
+          // ),
         ),
       ),
     );

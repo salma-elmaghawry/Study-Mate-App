@@ -68,7 +68,7 @@ class _HomeBodyState extends State<HomeBody> {
               QuickAccessGrid(),
               SizedBox(height: 15.h),
               Text("My Files", style: AppTextStyles.quicksand18BoldB()),
-              // DocumentsSection(),
+              MyFilesSection(),
             ],
           ),
         ],
