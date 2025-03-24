@@ -1,5 +1,6 @@
 class Routes {
   static const String nav_bar = '/';
+  static const String onboarding = '/onboarding';
   static const String home = '/home';
   static const String summarization = '/summarization';
   static const String flashcards = '/flashcards';
@@ -15,4 +16,5 @@ class Routes {
   static const String theme = '/theme';
   static const String profile = '/profile';
   static const String chatbot ="/chatbot";
+
 }

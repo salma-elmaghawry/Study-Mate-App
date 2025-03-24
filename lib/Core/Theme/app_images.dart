@@ -6,6 +6,9 @@ class AppImages {
   static const String yellowfolder = 'assets/images/yellowfolder.png';
   static const String notes = 'assets/images/notes.png';
   static const String milo = 'assets/images/Milo.png';
+  static const String onboarding1 = 'assets/images/onboarding1.png';
+  static const String onboarding2 = 'assets/images/onboarding2.png';
+  static const String onboarding3 = 'assets/images/onboarding3.png';
 }
 
 class AppIcons {
@@ -35,4 +38,6 @@ class AppIcons {
   static const String delete = 'assets/icons/delete.svg';
   static const String share = 'assets/icons/share.svg';
   static const String milo = 'assets/icons/milo.svg';
+  static const String forward = 'assets/icons/forward.svg';
+  static const String backword = 'assets/icons/backword.svg';
 }
