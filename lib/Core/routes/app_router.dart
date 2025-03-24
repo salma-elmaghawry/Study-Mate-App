@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_mate/Core/routes/routes.dart';
+import 'package:study_mate/Features/Auth/presentation/screens/login_screen.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
@@ -38,11 +39,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => MusicScreen());
         case Routes.chatbot:
         return MaterialPageRoute(builder: (_) => MusicScreen());
+        case Routes.login:
+        return MaterialPageRoute(builder: (_) => LoginScreen());
 
-      // case '/register':
-      //   return MaterialPageRoute(builder: (_) => RegisterScreen());
-      // case '/profile':
-      //   return MaterialPageRoute(builder: (_) => ProfileScreen());
+
       default:
         return MaterialPageRoute(
           builder:

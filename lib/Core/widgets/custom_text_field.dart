@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 
-class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key, this.radio, this.hintText, this.prefixIcon});
+class CustomTextFormField extends StatelessWidget {
+  CustomTextFormField({
+    super.key,
+    this.radio,
+    this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.isObsecureText,
+  });
   double? radio;
   String? hintText;
   Widget? prefixIcon;
+  Widget? suffixIcon;
+  bool? isObsecureText ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1), // Shadow color
-            blurRadius: 10, // Blur effect
-            spreadRadius: 1, // How much it spreads
-            offset: Offset(0, 2),
-          ),
-        ],
-      ),
-      child: TextField(
-        style: AppTextStyles.poppins14Regular(),
-        cursorColor: AppColors.primary,
-        decoration: InputDecoration(
-          hintText: hintText,
-          prefixIcon: prefixIcon,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(radio ?? 15),
-            borderSide: BorderSide.none,
-          ),
-          filled: true,
-          fillColor: AppColors.white,
+    return TextFormField(
+      obscureText: isObsecureText ?? false,
+      style: AppTextStyles.poppins14Regular(),
+      cursorColor: AppColors.primary,
+
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: AppTextStyles.poppins14Regular(color: AppColors.grey),
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: AppColors.grey),
         ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: AppColors.primary, width: 1.5),
+        ),
+        //fillColor: AppColors.white,
       ),
     );
   }
