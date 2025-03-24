@@ -7,6 +7,7 @@ import 'package:study_mate/Features/Music/music_screen.dart';
 import 'package:study_mate/Features/Notes/notes_screen.dart';
 import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';
 import 'package:study_mate/Features/Summarization/summarization_screen.dart';
+import 'package:study_mate/Features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -27,6 +28,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => MusicScreen());
       case Routes.profile:
         return MaterialPageRoute(builder: (_) => MusicScreen());
+          case Routes.onboarding:
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.notifications:
         return MaterialPageRoute(builder: (_) => MusicScreen());
       case Routes.settings:
