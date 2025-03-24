@@ -18,7 +18,7 @@ class StudyMateApp extends StatelessWidget {
 
         theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
         onGenerateRoute: AppRouter().generateRoute,
-        initialRoute: Routes.nav_bar,
+        initialRoute: Routes.onboarding,
       ),
     );
   }
