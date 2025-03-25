@@ -91,11 +91,17 @@ class _SignInScreenState extends State<SignInScreen> {
                       verticalSpace(18),
                       Align(
                         alignment: Alignment.centerRight,
-                        child: Text(
-                          "Forget Password?",
-                          style: AppTextStyles.poppins12Regular(
-                            color: AppColors.primary,
-                            fontSize: 16,
+                        child: GestureDetector(
+                          onTap: () {
+                            context.pushReplacementNamed(Routes.signUp);
+                          },
+                          child: Text(
+                            "Forget Password?",
+
+                            style: AppTextStyles.poppins12RegularUnderline(
+                              color: AppColors.primary,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ),
