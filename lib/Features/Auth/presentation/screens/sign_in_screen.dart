@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Core/helpers/extentions.dart';
 import 'package:study_mate/Core/helpers/spacing.dart';
+import 'package:study_mate/Core/routes/routes.dart';
+import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
+import 'package:study_mate/Core/widgets/text_with_action.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final formKey = GlobalKey<FormState>();
 
   bool isObsecureText = true;
@@ -77,13 +81,48 @@ class _LoginScreenState extends State<LoginScreen> {
                             });
                           },
                           child: Icon(
+                            color: AppColors.primary,
                             isObsecureText
                                 ? Icons.visibility_off
                                 : Icons.visibility,
                           ),
                         ),
                       ),
+                      verticalSpace(18),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "Forget Password?",
+                          style: AppTextStyles.poppins12Regular(
+                            color: AppColors.primary,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
                       verticalSpace(30),
+                      CustomTextButton(
+                        buttonText: "Sign In",
+                        textStyle: AppTextStyles.poppins14Regular(
+                          color: AppColors.white,
+                          fontSize: 16,
+                        ),
+                        onPressed: () {},
+                        backgroundColor: AppColors.primary,
+                        borderRadius: 8,
+                        horizontalPadding: 16,
+                        verticalPadding: 10,
+                      ),
+                      verticalSpace(20),
+                      Align(
+                        alignment: Alignment.center,
+                        child: TextWithAction(
+                          text: "Don't have an account? ",
+                          actionText: "Sign Up",
+                          onTap: () {
+                            context.pushReplacementNamed(Routes.signUp);
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),

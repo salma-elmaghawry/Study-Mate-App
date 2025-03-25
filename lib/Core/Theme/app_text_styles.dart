@@ -94,7 +94,7 @@ class AppTextStyles {
   static TextStyle poppins14Bold({Color? color, double? fontSize}) {
     return GoogleFonts.poppins(
       fontSize: fontSize ?? 14,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       color: color,
     );
   }
