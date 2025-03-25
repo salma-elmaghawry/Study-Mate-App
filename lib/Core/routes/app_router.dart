@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:study_mate/Core/routes/routes.dart';
+import 'package:study_mate/Features/Auth/presentation/screens/forget_password_screen.dart';
+import 'package:study_mate/Features/Auth/presentation/screens/sign_in_screen.dart';
+import 'package:study_mate/Features/Auth/presentation/screens/sign_up_screen.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
@@ -12,6 +15,8 @@ import 'package:study_mate/Features/onboarding/onboarding_screen.dart';
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.onboarding:
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.nav_bar:
         return MaterialPageRoute(builder: (_) => NavBar());
       case Routes.home:
@@ -26,23 +31,26 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => PomodoroScreen());
       case Routes.music:
         return MaterialPageRoute(builder: (_) => MusicScreen());
-      case Routes.profile:
-        return MaterialPageRoute(builder: (_) => MusicScreen());
-          case Routes.onboarding:
-        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.notifications:
         return MaterialPageRoute(builder: (_) => MusicScreen());
       case Routes.settings:
         return MaterialPageRoute(builder: (_) => MusicScreen());
       case Routes.quiz:
         return MaterialPageRoute(builder: (_) => MusicScreen());
-        case Routes.chatbot:
+      case Routes.chatbot:
         return MaterialPageRoute(builder: (_) => MusicScreen());
 
-      // case '/register':
-      //   return MaterialPageRoute(builder: (_) => RegisterScreen());
-      // case '/profile':
-      //   return MaterialPageRoute(builder: (_) => ProfileScreen());
+        //Auth 
+      case Routes.profile:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
+      case Routes.signIn:
+        return MaterialPageRoute(builder: (_) => SignInScreen());
+         case Routes.signUp:
+        return MaterialPageRoute(builder: (_) => SignUpScreen());
+         case Routes.forgotPassword:
+        return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+
+
       default:
         return MaterialPageRoute(
           builder:

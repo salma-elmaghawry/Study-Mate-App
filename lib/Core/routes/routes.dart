@@ -8,7 +8,7 @@ class Routes {
   static const String music = '/music';
   static const String notes = '/notes';
   static const String quiz = '/quiz';
-  static const String login = '/login';
+  static const String signIn = '/signIn';
   static const String signUp = '/signUp';
   static const String forgotPassword = '/forgotPassword';
   static const String settings = '/settings';
