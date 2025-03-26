@@ -34,14 +34,24 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
             title: "Success",
             message: "Login successful!",
             isSuccess: true,
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                Routes.nav_bar,
+                (route) => false,
+              );
+            },
           );
-          context.pushReplacementNamed(Routes.home);
         } else if (state is LoginFailure) {
           showCustomDialog(
             context,
             title: "Error",
             message: state.error,
             isSuccess: false,
+            onPressed: () {
+              Navigator.pop(context);
+            },
           );
         }
       },
@@ -95,8 +105,8 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';
-                      } else if (value.length < 8) {
-                        return 'Password must be at least 8 characters';
+                      } else if (value.length < 6) {
+                        return 'Password must be at least 6 characters';
                       }
                       return null;
                     },

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:study_mate/Features/Auth/data/auth_repo.dart';
 import 'package:study_mate/Features/Auth/data/models/login_model.dart';
@@ -13,10 +14,20 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> login(String email, String password) async {
     emit(LoginLoading());
     try {
-      final response = await authRepository.login(LoginRequest(email: email, password: password));
+      final response = await authRepository.login(
+        LoginRequest(email: email, password: password),
+      );
       emit(LoginSuccess(response));
-    } catch (e) {
-      emit(LoginFailure(e.toString()));
+    } catch (error) {
+      String errorMessage = error.toString();
+
+      if (error is DioException) {
+        if (error.response?.data != null &&
+            error.response?.data["message"] != null) {
+          errorMessage = error.response!.data["message"];
+        }
+      }
+      emit(LoginFailure(errorMessage));
     }
   }
 }
