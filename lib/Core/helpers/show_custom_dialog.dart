@@ -15,11 +15,12 @@ void showCustomDialog(
           backgroundColor: AppColors.white,
           icon:
               isSuccess
-                  ? Icon(Icons.check_circle, color: AppColors.green, size: 24)
-                  : Icon(Icons.error, color: AppColors.red, size: 24),
+                  ? Icon(Icons.check_circle, color: AppColors.green, size: 30)
+                  : Icon(Icons.error, color: AppColors.red, size: 30),
           title: Text(
             title,
             style: AppTextStyles.poppins14Regular(
+              fontSize: 18,
               color: isSuccess ? AppColors.green : AppColors.red,
             ),
           ),
@@ -28,7 +29,7 @@ void showCustomDialog(
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: Text("OK"),
-              style: TextButton.styleFrom(foregroundColor: AppColors.primary),
+              style: TextButton.styleFrom(foregroundColor: AppColors.primary, textStyle: AppTextStyles.poppins14Regular()),
             ),
           ],
         ),

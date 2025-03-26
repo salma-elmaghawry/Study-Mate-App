@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Core/helpers/extentions.dart';
 import 'package:study_mate/Core/helpers/show_custom_dialog.dart';
 import 'package:study_mate/Core/helpers/spacing.dart';
 import 'package:study_mate/Core/routes/routes.dart';
@@ -34,6 +35,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
             message: "Login successful!",
             isSuccess: true,
           );
+          context.pushReplacementNamed(Routes.home);
         } else if (state is LoginFailure) {
           showCustomDialog(
             context,
@@ -113,12 +115,34 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       ),
                     ),
                   ),
+
+                  verticalSpace(18),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        context.pushReplacementNamed(Routes.forgotPassword);
+                      },
+                      child: Text(
+                        "Forget Password?",
+
+                        style: AppTextStyles.poppins12RegularUnderline(
+                          color: AppColors.primary,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
                   verticalSpace(30),
                   CustomTextButton(
                     buttonText: "Sign In",
                     textStyle: AppTextStyles.poppins14Regular(
                       color: AppColors.white,
+                      fontSize: 16,
                     ),
+                    borderRadius: 8,
+                    horizontalPadding: 16,
+                    verticalPadding: 10,
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         BlocProvider.of<LoginCubit>(
