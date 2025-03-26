@@ -11,16 +11,22 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.isObsecureText,
+    this.controller,
+    this.validator
   });
   double? radio;
   String? hintText;
   Widget? prefixIcon;
   Widget? suffixIcon;
-  bool? isObsecureText ;
+  bool? isObsecureText;
+  TextEditingController? controller;
+ String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
       obscureText: isObsecureText ?? false,
       style: AppTextStyles.poppins14Regular(),
       cursorColor: AppColors.primary,
