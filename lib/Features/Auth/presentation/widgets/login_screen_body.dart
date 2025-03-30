@@ -32,7 +32,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
           showCustomDialog(
             context,
             title: "Success",
-            message: "Login successful!",
+            message: "Welcome back to StudyMate \n  Your ideal Study Partner",
             isSuccess: true,
             onPressed: () {
               Navigator.pop(context);
