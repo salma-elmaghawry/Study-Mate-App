@@ -9,18 +9,20 @@ class CustomTextFormField extends StatelessWidget {
     this.radio,
     this.hintText,
     this.prefixIcon,
+    this.labelText,
     this.suffixIcon,
     this.isObsecureText,
     this.controller,
-    this.validator
+    this.validator,
   });
   double? radio;
   String? hintText;
   Widget? prefixIcon;
+  String? labelText;
   Widget? suffixIcon;
   bool? isObsecureText;
   TextEditingController? controller;
- String? Function(String?)? validator;
+  String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,8 @@ class CustomTextFormField extends StatelessWidget {
 
       decoration: InputDecoration(
         hintText: hintText,
+        labelText: labelText,
+        labelStyle: AppTextStyles.poppins14Regular(color: AppColors.grey),
         hintStyle: AppTextStyles.poppins14Regular(color: AppColors.grey),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,

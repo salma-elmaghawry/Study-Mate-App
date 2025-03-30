@@ -7,7 +7,7 @@ void showCustomDialog(
   required String title,
   required String message,
   required bool isSuccess,
-    required  void Function()? onPressed
+  required void Function()? onPressed,
 }) {
   showDialog(
     context: context,
@@ -28,10 +28,14 @@ void showCustomDialog(
           content: Text(message),
           actions: [
             TextButton(
-              onPressed:onPressed,
+              onPressed: onPressed,
               child: Text("OK"),
-              style: TextButton.styleFrom(foregroundColor: AppColors.primary, textStyle: AppTextStyles.poppins14Regular()),
+              style: TextButton.styleFrom(
+                foregroundColor: AppColors.primary,
+                textStyle: AppTextStyles.poppins14Regular(),
+              ),
             ),
+            
           ],
         ),
   );
