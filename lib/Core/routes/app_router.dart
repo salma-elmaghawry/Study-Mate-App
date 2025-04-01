@@ -3,6 +3,8 @@ import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/forget_password_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/login_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/register_screen.dart';
+import 'package:study_mate/Features/Auth/presentation/Screens/reset_password_screen.dart';
+import 'package:study_mate/Features/Auth/presentation/Screens/verify_otp_screen.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
@@ -49,6 +51,11 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => RegisterScreen());
       case Routes.forgotPassword:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+      case Routes.verifyOtp:
+        return MaterialPageRoute(builder: (_) => VerifyOtpScreen());
+      case Routes.resetPassword:
+        return MaterialPageRoute(builder: (_) => ResetPasswordScreen());
+
 
       default:
         return MaterialPageRoute(
