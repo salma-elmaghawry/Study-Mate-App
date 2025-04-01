@@ -11,6 +11,8 @@ class Routes {
   static const String signIn = '/signIn';
   static const String signUp = '/signUp';
   static const String forgotPassword = '/forgotPassword';
+  static const String verifyOtp = '/verifyOtp';
+  static const String resetPassword = '/resetPassword';
   static const String settings = '/settings';
   static const String notifications = '/notifications';
   static const String theme = '/theme';
