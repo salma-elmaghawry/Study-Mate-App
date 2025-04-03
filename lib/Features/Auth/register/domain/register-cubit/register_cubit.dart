@@ -11,13 +11,13 @@ part 'register_state.dart';
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(RegisterRepo registerRepo) : super(RegisterInitial());
 
-  Future<void> register(
-    String email,
-    String password,
-    String firstName,
-    String lastName,
-    String confirmPassword,
-  ) async {
+  Future<void> register({
+    required String firstName,
+    required String lastName,
+    required String confirmPassword,
+    required String email,
+    required String password,
+  }) async {
     emit(RegisterLoading());
     try {
       final registerRepo = RegisterRepo(getIt<ApiService>());

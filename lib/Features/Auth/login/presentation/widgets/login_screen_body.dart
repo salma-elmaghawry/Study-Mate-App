@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
-import 'package:study_mate/Core/helpers/app_regex.dart';
 import 'package:study_mate/Core/helpers/extentions.dart';
 import 'package:study_mate/Core/helpers/show_custom_dialog.dart';
 import 'package:study_mate/Core/helpers/spacing.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
-import 'package:study_mate/Core/widgets/password_validation.dart';
 import 'package:study_mate/Core/widgets/text_with_action.dart';
 import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 
@@ -23,35 +21,8 @@ class LoginScreenBody extends StatefulWidget {
 class _LoginScreenBodyState extends State<LoginScreenBody> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  late TextEditingController passwordController;
+  final passwordController = TextEditingController();
   bool isObsecureText = true;
-
-  bool hasLowercase = false;
-  bool hasUppercase = false;
-  bool hasSpecialCharacters = false;
-  bool hasNumber = false;
-  bool hasMinLength = false;
-
-  @override
-  void initState() {
-    super.initState();
-    passwordController = TextEditingController();
-    setupPasswordControllerListener();
-  }
-
-  void setupPasswordControllerListener() {
-    passwordController.addListener(() {
-      setState(() {
-        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasSpecialCharacters = AppRegex.hasSpecialCharacter(
-          passwordController.text,
-        );
-        hasNumber = AppRegex.hasNumber(passwordController.text);
-        hasMinLength = AppRegex.hasMinLength(passwordController.text);
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +68,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
       builder: (context, state) {
         return Column(
           children: [
-            verticalSpace(80),
+            verticalSpace(50),
             Text("Sign In", style: AppTextStyles.quicksand24Bold(fontSize: 30)),
             verticalSpace(16),
             Text(
@@ -165,14 +136,6 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                     ),
                   ),
 
-                  verticalSpace(18),
-                  PasswordValidations(
-                    hasLowerCase: hasLowercase,
-                    hasUpperCase: hasUppercase,
-                    hasSpecialCharacters: hasSpecialCharacters,
-                    hasNumber: hasNumber,
-                    hasMinLength: hasMinLength,
-                  ),
                   verticalSpace(18),
                   Align(
                     alignment: Alignment.centerRight,
