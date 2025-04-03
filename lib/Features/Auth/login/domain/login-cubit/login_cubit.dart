@@ -1,13 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:study_mate/Features/Auth/data/auth_repo.dart';
-import 'package:study_mate/Features/Auth/data/models/login_model.dart';
+import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
+import 'package:study_mate/Features/Auth/login/data/models/login_model.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final AuthRepository authRepository;
+  final loginRepository authRepository;
 
   LoginCubit(this.authRepository) : super(LoginInitial());
 

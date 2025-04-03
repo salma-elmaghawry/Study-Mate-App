@@ -9,7 +9,7 @@ import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
 import 'package:study_mate/Core/widgets/text_with_action.dart';
-import 'package:study_mate/Features/Auth/presentation/cubits/login/login_cubit.dart';
+import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 
 class LoginScreenBody extends StatefulWidget {
   const LoginScreenBody({super.key});
@@ -28,7 +28,17 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        if (state is LoginSuccess) {
+        if (state is LoginLoading) {
+          showDialog(
+            context: context,
+            builder:
+                (context) => const Center(
+                  child: CircularProgressIndicator(color: AppColors.primary),
+                ),
+          );
+        } else if (state is LoginInitial) {
+          Navigator.pop(context);
+        } else if (state is LoginSuccess) {
           showCustomDialog(
             context,
             title: "Success",
@@ -58,7 +68,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
       builder: (context, state) {
         return Column(
           children: [
-            verticalSpace(80),
+            verticalSpace(50),
             Text("Sign In", style: AppTextStyles.quicksand24Bold(fontSize: 30)),
             verticalSpace(16),
             Text(
@@ -180,5 +190,11 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
   }
 }

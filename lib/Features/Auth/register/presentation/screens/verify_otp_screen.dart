@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_mate/Features/Auth/presentation/widgets/verify_otp_body.dart';
+import 'package:study_mate/Features/Auth/register/presentation/widgets/verify_otp_body.dart';
 
 class VerifyOtpScreen extends StatelessWidget {
   const VerifyOtpScreen({super.key});
