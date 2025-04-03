@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_mate/Features/Auth/presentation/widgets/reset_password_body.dart';
+import 'package:study_mate/Features/Auth/login/presentation/widgets/reset_password_body.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});

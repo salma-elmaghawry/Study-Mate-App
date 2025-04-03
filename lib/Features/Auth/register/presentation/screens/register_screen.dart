@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:study_mate/Features/Auth/login/presentation/widgets/register_screen_body.dart';
 
-import 'package:study_mate/Features/Auth/presentation/widgets/register_screen_body.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

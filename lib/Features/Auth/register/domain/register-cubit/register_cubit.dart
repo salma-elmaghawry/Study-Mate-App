@@ -1,21 +1,27 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:study_mate/Features/Auth/data/auth_repo.dart';
-import 'package:study_mate/Features/Auth/data/models/login_model.dart';
-import 'package:study_mate/Features/Auth/data/models/register_model.dart';
+import 'package:study_mate/Core/di/dependency_injection.dart';
+import 'package:study_mate/Core/networking/api_service.dart';
+import 'package:study_mate/Features/Auth/register/data/models/register_model.dart';
+import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  final AuthRepository authRepository;
+  RegisterCubit() : super(RegisterInitial());
 
-  RegisterCubit(this.authRepository) : super(RegisterInitial());
-
-  Future<void> register(String email, String password,String firstName ,String lastName ,String confirmPassword) async {
+  Future<void> register(
+    String email,
+    String password,
+    String firstName,
+    String lastName,
+    String confirmPassword,
+  ) async {
     emit(RegisterLoading());
     try {
-      final response = await authRepository.register(
+      final registerRepo = RegisterRepo(getIt<ApiService>());
+      final response = await registerRepo.register(
         RegisterRequest(
           email: email,
           password: password,
@@ -36,6 +42,5 @@ class RegisterCubit extends Cubit<RegisterState> {
       }
       emit(RegisterFailure(errorMessage));
     }
-    
   }
 }

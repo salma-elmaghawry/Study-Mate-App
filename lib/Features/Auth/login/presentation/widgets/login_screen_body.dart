@@ -11,7 +11,7 @@ import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
 import 'package:study_mate/Core/widgets/password_validation.dart';
 import 'package:study_mate/Core/widgets/text_with_action.dart';
-import 'package:study_mate/Features/Auth/presentation/cubits/login/login_cubit.dart';
+import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 
 class LoginScreenBody extends StatefulWidget {
   const LoginScreenBody({super.key});
@@ -173,6 +173,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                     hasNumber: hasNumber,
                     hasMinLength: hasMinLength,
                   ),
+                  verticalSpace(18),
                   Align(
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
