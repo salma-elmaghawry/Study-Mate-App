@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/di/dependency_injection.dart';
 import 'package:study_mate/Core/routes/routes.dart';
-import 'package:study_mate/Features/Auth/data/auth_repo.dart';
+import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
+import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/forget_password_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/login_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/register_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/reset_password_screen.dart';
 import 'package:study_mate/Features/Auth/presentation/Screens/verify_otp_screen.dart';
-import 'package:study_mate/Features/Auth/presentation/cubits/login/login_cubit.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
@@ -53,7 +53,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
-                create: (context) => LoginCubit(getIt<AuthRepository>()),
+                create: (context) => LoginCubit(getIt<loginRepository>()),
                 child: LoginScreen(),
               ),
         );

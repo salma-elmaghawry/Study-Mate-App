@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:study_mate/Core/networking/api_service.dart';
-import 'package:study_mate/Features/Auth/data/auth_repo.dart';
-import 'package:study_mate/Features/Auth/presentation/cubits/login/login_cubit.dart';
-import 'package:study_mate/Features/Auth/presentation/cubits/register/register_cubit.dart';
+import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
+import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
+import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
+import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
+
 
 final getIt=GetIt.instance;
 Future<void> setupGetIt() async {
@@ -11,10 +13,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton(() => Dio());
   getIt.registerLazySingleton(() => ApiService(getIt<Dio>()));
 
-//Auth Repository
-  getIt.registerLazySingleton(() => AuthRepository(getIt<ApiService>()));
   //login cuit
-  getIt.registerFactory(() => LoginCubit(getIt<AuthRepository>()));
+  getIt.registerLazySingleton(() => loginRepository(getIt<ApiService>()));
+  getIt.registerFactory(() => LoginCubit(getIt<loginRepository>()));
   //register cubit
-  getIt.registerFactory(() => RegisterCubit(getIt<AuthRepository>()));
+  getIt.registerLazySingleton(() => RegisterRepo(getIt<ApiService>()));
+  getIt.registerFactory(() => RegisterCubit(getIt<RegisterRepo>()));
 }

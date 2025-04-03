@@ -5,7 +5,6 @@ import 'package:study_mate/Core/helpers/spacing.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Core/widgets/custom_text_field.dart';
-import 'package:study_mate/Core/widgets/text_with_action.dart';
 
 class ForgetPasswordBody extends StatefulWidget {
   const ForgetPasswordBody({super.key});

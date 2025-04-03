@@ -3,15 +3,14 @@ import 'package:study_mate/Core/networking/api_constants.dart';
 import 'package:study_mate/Core/networking/api_service.dart';
 import 'package:study_mate/Features/Auth/login/data/models/login_model.dart';
 
-class AuthRepository {
+class loginRepository {
   final ApiService apiService;
-  AuthRepository(this.apiService);
+  loginRepository(this.apiService);
 
-  
   Future<LoginResponse> login(LoginRequest request) async {
     try {
       final response = await apiService.post(
-        ApiConstants.login, 
+        ApiConstants.login,
         data: request.toJson(),
       );
       return LoginResponse.fromJson(response.data);
@@ -19,7 +18,4 @@ class AuthRepository {
       throw Exception(e.response?.data['message'] ?? 'Login failed');
     }
   }
-
-
-  
 }

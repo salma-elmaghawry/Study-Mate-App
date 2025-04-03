@@ -9,7 +9,7 @@ import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(RegisterInitial());
+  RegisterCubit(RegisterRepo registerRepo) : super(RegisterInitial());
 
   Future<void> register(
     String email,
