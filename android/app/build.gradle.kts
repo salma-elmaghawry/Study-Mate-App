@@ -39,7 +39,7 @@ android {
              resValue(
                 type = "string",
                 name = "app_name",
-                value = "Flavors development")
+                value = "StudyMate development")
             applicationIdSuffix = ".development"
         }
         create("production") {
@@ -47,7 +47,7 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "Flavors production")
+                value = "StudyMate production")
             applicationIdSuffix = ".production"
         }
     }
