@@ -7,6 +7,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   setupGetIt();
+    //await ScreenUtil.ensureScreenSize();
+
   // await CacheHelper.init();
   // await CacheHelper.saveSecureData(key: CacheConstants.name, value: "salma");
 
