@@ -1,16 +1,41 @@
-# study_mate
+# 📚 StudyMate
 
-A new Flutter project.
+StudyMate is an all-in-one Flutter-powered workspace tailored to enhance the learning experience for students. Whether you're reviewing for an exam, trying to stay focused, or need a quick academic boost, StudyMate has your back.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+### 🔍 Personalized Learning
+- **Summarization**: Instantly generate summaries of lengthy content for efficient studying.
+- **Flashcards**: Create and review flashcards to reinforce key concepts.
+- **Quizzes**: Test your knowledge with customized quizzes based on your materials.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### ⏱ Focus Tools
+- **Pomodoro Sessions**: Break study time into focused intervals to boost productivity.
+- **Background Sounds**: Choose from a selection of calming sounds to improve concentration.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎯 Motivation & Progress
+- **Gamification**: Earn badges and track achievements to stay motivated throughout your study journey.
+
+### 📝 Productivity Tools
+- **Integrated Note-taking**: Capture your thoughts and lessons in a clean, organized space.
+- **Time Management**: Use built-in tools to plan, prioritize, and manage your study schedule efficiently.
+
+### 🤖 AI Assistance
+- **Academic Chatbot**: Get instant answers, study tips, and explanations from an intelligent AI assistant—your 24/7 study buddy.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Flutter](https://flutter.dev/docs/get-started/install) (latest stable version)
+- Dart SDK
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/studymate.git
+   cd studymate
