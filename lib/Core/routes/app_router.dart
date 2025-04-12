@@ -4,7 +4,7 @@ import 'package:study_mate/Core/di/dependency_injection.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
 import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
-import 'package:study_mate/Features/Auth/login/presentation/Screens/reset_password_screen.dart';
+import 'package:study_mate/Features/Auth/reset_password/presentation/reset_password_screen.dart';
 import 'package:study_mate/Features/Auth/login/presentation/screens/forget_password_screen.dart';
 import 'package:study_mate/Features/Auth/login/presentation/screens/login_screen.dart';
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
