@@ -52,10 +52,9 @@ class _LoginFormState extends State<LoginForm> {
           LoginButton(
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                BlocProvider.of<LoginCubit>(context).login(
-                  emailController.text,
-                  passwordController.text,
-                );
+                BlocProvider.of<LoginCubit>(
+                  context,
+                ).login(emailController.text, passwordController.text);
               }
             },
           ),

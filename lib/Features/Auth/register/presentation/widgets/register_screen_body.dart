@@ -38,6 +38,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                 context,
                 Routes.verifyOtp,
                 (route) => false,
+                arguments: state.email,
               );
             },
           );

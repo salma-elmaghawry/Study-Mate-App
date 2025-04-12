@@ -5,6 +5,8 @@ import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
 import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
+import 'package:study_mate/Features/Auth/verity_otp/data/verify_otp_repo.dart';
+import 'package:study_mate/Features/Auth/verity_otp/domain/cubit/verify_otp_cubit.dart';
 
 
 final getIt=GetIt.instance;
@@ -19,4 +21,7 @@ Future<void> setupGetIt() async {
   //register cubit
   getIt.registerLazySingleton(() => RegisterRepo(getIt<ApiService>()));
   getIt.registerFactory(() => RegisterCubit(getIt<RegisterRepo>()));
+//veriify otp cuubit
+  getIt.registerLazySingleton(() => VerifyEmailRepo(getIt<ApiService>()));
+  getIt.registerFactory(() => VerifyOtpCubit(getIt<VerifyEmailRepo>()));
 }
