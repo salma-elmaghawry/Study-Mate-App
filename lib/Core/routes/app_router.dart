@@ -10,7 +10,7 @@ import 'package:study_mate/Features/Auth/login/presentation/screens/login_screen
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
 import 'package:study_mate/Features/Auth/register/presentation/screens/register_screen.dart';
-import 'package:study_mate/Features/Auth/register/presentation/screens/verify_otp_screen.dart';
+import 'package:study_mate/Features/Auth/verity_otp/verify_otp_screen.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/nav_bar.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
