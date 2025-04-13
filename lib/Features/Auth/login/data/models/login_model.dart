@@ -5,18 +5,17 @@ class LoginRequest {
   LoginRequest({required this.email, required this.password});
 
   Map<String, dynamic> toJson() {
-    return {
-      "email": email,
-      "password": password,
-    };
+    return {"email": email, "password": password};
   }
 }
+
 class LoginResponse {
   final bool isSuccess;
   final String token;
   final String? message;
   final String refreshToken;
   final String role;
+  final String id;
 
   LoginResponse({
     required this.isSuccess,
@@ -24,6 +23,7 @@ class LoginResponse {
     this.message,
     required this.refreshToken,
     required this.role,
+    required this.id
   });
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) {
@@ -33,6 +33,7 @@ class LoginResponse {
       message: json['message'],
       refreshToken: json['refreshToken'],
       role: json['role'],
+      id: json['id'],
     );
   }
 }
