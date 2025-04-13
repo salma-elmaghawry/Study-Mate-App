@@ -12,4 +12,5 @@ class AppColors {
   static const incorrect = Color(0xFFF698A0);
   static const green = Color(0xFF3AC36F);
   static const grey = Color(0xff8E8E8E);
+  static const textFieldColor = Color(0xffE2E0E0CC);
 }

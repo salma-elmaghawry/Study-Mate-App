@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
-import 'package:study_mate/Core/Theme/app_strings.dart';
+
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/routes/routes.dart';
-import 'package:study_mate/Core/widgets/custom_text_field.dart';
-import 'package:study_mate/Features/Home/presentation/widgets/badge_card.dart';
-import 'package:study_mate/Features/Home/presentation/widgets/goal_widget.dart';
+
 
 class QuickAccessGrid extends StatelessWidget {
   @override

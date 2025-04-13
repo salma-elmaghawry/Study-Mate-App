@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:study_mate/Core/Theme/app_images.dart';
-import 'package:study_mate/Core/routes/routes.dart';
+
 import 'package:study_mate/Core/widgets/custom_appBar.dart';
 import 'package:study_mate/Features/Home/presentation/widgets/home_body.dart';
 
