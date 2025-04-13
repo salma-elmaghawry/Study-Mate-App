@@ -32,24 +32,6 @@ StudyMate is an all-in-one Flutter-powered workspace tailored to enhance the lea
 
 
 ---
-## 📸 Screenshots
-
-<p float="left">
-  <img src=![csd](https://github.com/user-attachments/assets/006794e8-bffc-40c2-ac99-9d4b4aa38a90)
- width="30%" />
-  <img src=![csd](https://github.com/user-attachments/assets/006794e8-bffc-40c2-ac99-9d4b4aa38a90)
- width="30%" />
-  <img src=![csd](https://github.com/user-attachments/assets/006794e8-bffc-40c2-ac99-9d4b4aa38a90)
- width="30%" />
- 
-</p>
-
-<p float="left">
-  <img src="screenshots/screen4.png" width="30%" />
-  <img src="screenshots/screen5.png" width="30%" />
-  <img src="screenshots/screen6.png" width="30%" />
-</p>
-
 
 ## 🚀 Getting Started
 
