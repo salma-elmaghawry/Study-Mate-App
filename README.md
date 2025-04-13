@@ -26,6 +26,7 @@ StudyMate is an all-in-one Flutter-powered workspace tailored to enhance the lea
 - **Academic Chatbot**: Get instant answers, study tips, and explanations from an intelligent AI assistant—your 24/7 study buddy.
 
 ---
+## Demo of App Until Now .......(StudyMate Still inprogress)
 
 ## 🚀 Getting Started
 
