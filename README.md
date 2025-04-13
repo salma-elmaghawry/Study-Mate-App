@@ -1,6 +1,6 @@
 # 📚 StudyMate
 
-StudyMate is an all-in-one Flutter-powered workspace tailored to enhance the learning experience for students. Whether you're reviewing for an exam, trying to stay focused, or need a quick academic boost, StudyMate has your back.
+StudyMate is an all-in-one workspace tailored to enhance the learning experience for students. Whether you're reviewing for an exam, trying to stay focused, or need a quick academic boost, StudyMate has your back.
 
 ---
 
