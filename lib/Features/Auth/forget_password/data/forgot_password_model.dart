@@ -6,14 +6,7 @@ class ForgotPasswordRequest {
   Map<String, dynamic> toJson() => {'email': email};
 }
 
-class VerifyPasswordResetRequest {
-  final String email;
-  final int code;
 
-  VerifyPasswordResetRequest({required this.email, required this.code});
-
-  Map<String, dynamic> toJson() => {'email': email, 'code': code};
-}
 
 class ResetPasswordRequest {
   final String email;

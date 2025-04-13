@@ -26,7 +26,7 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
         if (state is ForgotPasswordSuccess) {
           Navigator.pushNamed(
             context,
-            Routes.verifyOtp,
+            Routes.verifyPasswordOtp,
             arguments: emailController.text,
           );
         }
@@ -64,7 +64,9 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
-                    } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    } else if (!RegExp(
+                      r'^[^@]+@[^@]+\.[^@]+',
+                    ).hasMatch(value)) {
                       return 'Enter a valid email';
                     }
                     return null;
@@ -75,7 +77,9 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
                   builder: (context, state) {
                     if (state is ForgotPasswordLoading) {
                       return const Center(
-                        child: CircularProgressIndicator(color: AppColors.primary),
+                        child: CircularProgressIndicator(
+                          color: AppColors.primary,
+                        ),
                       );
                     }
                     return CustomTextButton(
@@ -90,8 +94,8 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           context.read<ForgotPasswordCubit>().sendResetCode(
-                                emailController.text,
-                              );
+                            emailController.text,
+                          );
                         }
                       },
                       backgroundColor: AppColors.primary,

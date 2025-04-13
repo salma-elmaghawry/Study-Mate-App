@@ -14,7 +14,7 @@ class VerifyPasswordOtpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>ForgotPasswordCubit(getIt<ForgotPasswordRepo>()),
+      create: (context) => ForgotPasswordCubit(getIt<ForgotPasswordRepo>()),
       child: Scaffold(
         body: SafeArea(
           child: Padding(
@@ -27,14 +27,13 @@ class VerifyPasswordOtpScreen extends StatelessWidget {
                     Routes.resetPassword,
                     arguments: {
                       'email': email,
-                      'code': (context.read<ForgotPasswordCubit>().state 
-                              as VerifyResetCodeSuccess).code,
+                      'code': int.parse((state as VerifyResetCodeSuccess).code),
                     },
                   );
                 } else if (state is VerifyResetCodeFailure) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(state.error)),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text(state.error)));
                 }
               },
               builder: (context, state) {

@@ -28,7 +28,10 @@ class _VerifyPasswordOtpBodyState extends State<VerifyPasswordOtpBody> {
       child: Column(
         children: [
           verticalSpace(80),
-          Text("Verify Code", style: AppTextStyles.quicksand24Bold(fontSize: 30)),
+          Text(
+            "Verify Code",
+            style: AppTextStyles.quicksand24Bold(fontSize: 30),
+          ),
           verticalSpace(16),
           Text(
             "Please enter the code we just sent to ${widget.email}",
@@ -83,10 +86,16 @@ class _VerifyPasswordOtpBodyState extends State<VerifyPasswordOtpBody> {
                 verticalPadding: 10,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    context.read<ForgotPasswordCubit>().verifyResetCode(
-                          email: widget.email,
-                          code: int.parse(otpController.text),
-                        );
+                    try {
+                      final code = int.parse(otpController.text);
+                      context.read<ForgotPasswordCubit>().verifyResetCode(code);
+                    } catch (e) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Please enter a valid OTP code'),
+                        ),
+                      );
+                    }
                   }
                 },
                 backgroundColor: AppColors.primary,

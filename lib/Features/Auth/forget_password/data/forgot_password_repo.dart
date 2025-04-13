@@ -15,27 +15,35 @@ class ForgotPasswordRepo {
         data: ForgotPasswordRequest(email: email).toJson(),
       );
     } on DioException catch (e) {
-      throw Exception(e.response?.data['message'] ?? 'Failed to send reset code');
+      throw Exception(
+        e.response?.data['message'] ?? 'Failed to send reset code',
+      );
     }
   }
 
-  Future<void> verifyResetCode({required String email, required int code}) async {
+  Future<void> verifyPasswordResetOtp(int code) async {
     try {
       await apiService.post(
-        ApiConstants.verifyEmail,
-        data: VerifyPasswordResetRequest(email: email, code: code).toJson(),
+        '${ApiConstants.verifyPasswordResetOtp}?code=$code',
       );
     } on DioException catch (e) {
       throw Exception(e.response?.data['message'] ?? 'Verification failed');
     }
   }
+   Future<void> resendOtp(String email) async {
+    try {
+      await apiService.post(
+        ApiConstants.forgotPassword,
+        data: {'email': email},
+      );
+    } on DioException catch (e) {
+      throw Exception(e.response?.data['message'] ?? 'Failed to resend OTP');
+    }
+  }
 
   Future<void> resetPassword(ResetPasswordRequest request) async {
     try {
-      await apiService.post(
-        ApiConstants.resetPassword,
-        data: request.toJson(),
-      );
+      await apiService.post(ApiConstants.resetPassword, data: request.toJson());
     } on DioException catch (e) {
       throw Exception(e.response?.data['message'] ?? 'Password reset failed');
     }
