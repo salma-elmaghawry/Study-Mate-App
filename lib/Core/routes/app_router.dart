@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/di/dependency_injection.dart';
 import 'package:study_mate/Core/routes/routes.dart';
-import 'package:study_mate/Features/Auth/forget_password/presentation/forget_password_screen.dart';
+import 'package:study_mate/Features/Auth/forget_password/presentation/Screens/forget_password_screen.dart';
 import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
 import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
-import 'package:study_mate/Features/Auth/reset_password/presentation/reset_password_screen.dart';
+import 'package:study_mate/Features/Auth/forget_password/presentation/Screens/reset_password_screen.dart';
 import 'package:study_mate/Features/Auth/login/presentation/screens/login_screen.dart';
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
@@ -73,7 +73,11 @@ class AppRouter {
         final email = settings.arguments as String;
         return MaterialPageRoute(builder: (_) => VerifyOtpScreen(email: email));
       case Routes.resetPassword:
-        return MaterialPageRoute(builder: (_) => ResetPasswordScreen());
+      final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(builder: (_) => ResetPasswordScreen(
+          email: args['email'],
+          code: args['code'],
+        ));
 
       default:
         return MaterialPageRoute(

@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:study_mate/Core/networking/api_service.dart';
+import 'package:study_mate/Features/Auth/forget_password/data/forgot_password_repo.dart';
+import 'package:study_mate/Features/Auth/forget_password/domain/cubit/forget_password_cubit.dart';
 import 'package:study_mate/Features/Auth/login/data/login_repo.dart';
 import 'package:study_mate/Features/Auth/login/domain/login-cubit/login_cubit.dart';
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
@@ -24,4 +26,8 @@ Future<void> setupGetIt() async {
 //veriify otp cuubit
   getIt.registerLazySingleton(() => VerifyEmailRepo(getIt<ApiService>()));
   getIt.registerFactory(() => VerifyOtpCubit(getIt<VerifyEmailRepo>()));
+
+  //forgot password repo
+  getIt.registerLazySingleton(() => ForgotPasswordRepo(getIt<ApiService>()));
+  getIt.registerFactory(() => ForgotPasswordCubit(getIt<ForgotPasswordRepo>()));
 }

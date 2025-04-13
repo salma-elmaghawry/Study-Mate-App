@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/helpers/spacing.dart';
-import 'package:study_mate/Core/widgets/custom_text_button.dart';
 import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
 import 'package:study_mate/Features/Auth/register/presentation/widgets/already_have_account.dart';
 import 'package:study_mate/Features/Auth/register/presentation/widgets/email_field.dart';
