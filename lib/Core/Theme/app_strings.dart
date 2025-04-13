@@ -5,7 +5,6 @@ class AppStrings {
   static const String search = 'Search';
   static const String profile = 'Profile';
   static const String notifications = 'Notifications';
-
   static const String settings = 'Settings';
   static const String darkMode = 'Dark Mode';
   static const String lightMode = 'Light Mode';
