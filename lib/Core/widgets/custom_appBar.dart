@@ -7,7 +7,7 @@ import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 
 class CustomAppbar extends StatelessWidget {
-  CustomAppbar({super.key, this.name = "salma"});
+  CustomAppbar({super.key, this.name = ""});
   final String name;
   @override
   Widget build(BuildContext context) {

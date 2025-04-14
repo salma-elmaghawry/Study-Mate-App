@@ -30,7 +30,7 @@ class RegisterCubit extends Cubit<RegisterState> {
           confirmPassword: confirmPassword,
         ),
       );
-      emit(RegisterSuccess(response));
+      emit(RegisterSuccess(response,email));
     } catch (error) {
       String errorMessage = error.toString();
 

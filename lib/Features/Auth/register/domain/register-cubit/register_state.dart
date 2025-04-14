@@ -12,9 +12,11 @@ class RegisterInitial extends RegisterState {}
 class RegisterLoading extends RegisterState {}
 
 class RegisterSuccess extends RegisterState {
+    final String email;
+
   final RegisterResponse response;
 
-  RegisterSuccess(this.response);
+  RegisterSuccess(this.response,this.email);
 
   @override
   List<Object?> get props => [response];

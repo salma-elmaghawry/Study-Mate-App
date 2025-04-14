@@ -12,6 +12,7 @@ class Routes {
   static const String signUp = '/signUp';
   static const String forgotPassword = '/forgotPassword';
   static const String verifyOtp = '/verifyOtp';
+  static const String verifyPasswordOtp = '/verifyPasswordOtp';
   static const String resetPassword = '/resetPassword';
   static const String settings = '/settings';
   static const String notifications = '/notifications';
