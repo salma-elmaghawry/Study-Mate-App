@@ -38,6 +38,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
+  flutter_launcher_icons: ^0.14.3
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
   flutter_speed_dial: ^7.0.0
@@ -56,6 +57,12 @@ dependencies:
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.1
 
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#FFFFFF" # Optional: Background color for adaptive icons (Android)
+  adaptive_icon_foreground: "assets/images/app_icon.png" # Optional: Foreground for adaptive icons (Android)
 dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
