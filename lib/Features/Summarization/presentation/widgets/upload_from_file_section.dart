@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Features/Summarization/presentation/widgets/file_uploaded_dialog.dart';
 
 class UploadNewFileSection extends StatelessWidget {
   const UploadNewFileSection({super.key});
@@ -17,13 +18,18 @@ class UploadNewFileSection extends StatelessWidget {
       );
 
       if (result != null && result.files.isNotEmpty) {
+        String? fileName = result.files.first.name;
         String? filePath = result.files.first.path;
+
         if (filePath != null) {
-          print("File picked: $filePath");
+          showDialog(
+            context: context,
+            builder: (_) => FileUploadDialog(fileName: fileName),
+          );
         } else {
           ScaffoldMessenger.of(
             context,
-          ).showSnackBar(SnackBar(content: Text("Invalid file path")));
+          ).showSnackBar(const SnackBar(content: Text("Invalid file path")));
         }
       }
     } on MissingPluginException catch (e) {

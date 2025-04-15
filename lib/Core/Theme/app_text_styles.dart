@@ -107,6 +107,14 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle poppins12Bold({Color? color, double? fontSize}) {
+    return GoogleFonts.poppins(
+      fontSize: fontSize ?? 12,
+      fontWeight: FontWeight.w500,
+      color: color,
+    );
+  }
+
   static TextStyle poppins12RegularUnderline({Color? color, double? fontSize}) {
     return GoogleFonts.poppins(
       decoration: TextDecoration.underline,
