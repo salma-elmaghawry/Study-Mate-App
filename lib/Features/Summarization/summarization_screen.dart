@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Features/Summarization/presentation/widgets/upload_from_file_section.dart';
 
 class SummarizationScreen extends StatelessWidget {
   const SummarizationScreen({super.key});
@@ -6,13 +8,10 @@ class SummarizationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Summarization'),
-      ),
-      body: const Center(
-        child: Text(
-          'This is the summarization screen',
-          style: TextStyle(fontSize: 24),
+      appBar: AppBar(title: const Text('Summarization')),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [const SizedBox(height: 20), const UploadNewFileSection()],
         ),
       ),
     );

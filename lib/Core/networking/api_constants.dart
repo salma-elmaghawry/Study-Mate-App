@@ -10,7 +10,8 @@ class ApiConstants{
   static const String requestEmailVerification = "Authentication/request-email-verification";
   static const String verifyEmail = "Authentication/verify-email-otp";
   static const String verifyPasswordResetOtp = "Authentication/verify-password-reset-otp";
-
+//Summarization
+  static const String summarize = "Summarize/summarize-as-pdf";
 
  
 
