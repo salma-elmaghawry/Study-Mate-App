@@ -9,6 +9,9 @@ class AppImages {
   static const String onboarding1 = 'assets/images/onboarding1.png';
   static const String onboarding2 = 'assets/images/onboarding2.png';
   static const String onboarding3 = 'assets/images/onboarding3.png';
+  static const String uploadFile = 'assets/images/upload_file.png';
+  static const String pdf = 'assets/images/pdf.png';
+  static const String quiz = 'assets/images/quiz.png';
 }
 
 class AppIcons {
@@ -40,4 +43,5 @@ class AppIcons {
   static const String milo = 'assets/icons/milo.svg';
   static const String forward = 'assets/icons/forward.svg';
   static const String backword = 'assets/icons/backword.svg';
+  static const String uploadFile = 'assets/icons/upload_file.svg';
 }

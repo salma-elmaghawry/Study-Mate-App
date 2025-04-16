@@ -7,8 +7,9 @@ import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/routes/routes.dart';
 
 class CustomAppbar extends StatelessWidget {
-  CustomAppbar({super.key, this.name = ""});
+  CustomAppbar({super.key, this.name = "", this.ifIneedUserIcon = false});
   final String name;
+  bool ifIneedUserIcon = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,12 +24,12 @@ class CustomAppbar extends StatelessWidget {
               bottom: 8,
               right: 8,
             ),
-            child: SvgPicture.asset(AppIcons.user, width: 30, height: 30),
+            child:
+                ifIneedUserIcon
+                    ? SvgPicture.asset(AppIcons.user, width: 30, height: 30)
+                    : null,
           ),
-          Text(
-            '${AppStrings.hello}$name',
-            style: AppTextStyles.quicksand24Bold(),
-          ),
+          Text('$name', style: AppTextStyles.quicksand24Bold()),
           Spacer(),
           IconButton(
             icon: SvgPicture.asset(AppIcons.notification),

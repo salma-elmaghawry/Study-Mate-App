@@ -9,6 +9,8 @@ import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
 import 'package:study_mate/Features/Auth/register/domain/register-cubit/register_cubit.dart';
 import 'package:study_mate/Features/Auth/verity_otp/data/verify_otp_repo.dart';
 import 'package:study_mate/Features/Auth/verity_otp/domain/cubit/verify_otp_cubit.dart';
+import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
+import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
 
 
 final getIt=GetIt.instance;
@@ -30,4 +32,8 @@ Future<void> setupGetIt() async {
   //forgot password repo
   getIt.registerLazySingleton(() => ForgotPasswordRepo(getIt<ApiService>()));
   getIt.registerFactory(() => ForgotPasswordCubit(getIt<ForgotPasswordRepo>()));
+
+  //summarization repo
+   getIt.registerLazySingleton(() => SummarizeRepo(getIt<ApiService>(), getIt<Dio>()));
+  getIt.registerFactory(() => SummarizeCubit(getIt<SummarizeRepo>()));
 }
