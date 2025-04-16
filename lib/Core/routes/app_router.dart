@@ -21,8 +21,6 @@ import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';
 import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
 import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
 import 'package:study_mate/Features/Summarization/presentation/summarization_screen.dart';
-import 'package:study_mate/Features/Summarization/presentation/open_summarized_pdf_screen.dart';
-import 'package:study_mate/Features/Summarization/presentation/summarizing_process_screen.dart';
 import 'package:study_mate/Features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
@@ -93,10 +91,11 @@ class AppRouter {
       //Summarization
       case Routes.summarizationScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => SummarizeCubit(getIt<SummarizeRepo>()),
-            child: SummarizationScreen(),
-          ),
+          builder:
+              (_) => BlocProvider(
+                create: (context) => SummarizeCubit(getIt<SummarizeRepo>()),
+                child: SummarizationScreen(),
+              ),
         );
 
       default:

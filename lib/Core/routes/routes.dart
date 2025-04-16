@@ -23,6 +23,7 @@ class Routes {
   static const String summarizationScreen = '/summarizationScreen';
   static const String opensummarizedPdfScreen = '/opensummarizedPdfScreen';
   static const String processPdfScreen = '/processPdfScreen';
+  
 
 
 }

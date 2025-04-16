@@ -7,6 +7,7 @@ import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/di/dependency_injection.dart';
+import 'package:study_mate/Core/helpers/extentions.dart';
 import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
 import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
 import 'package:study_mate/Features/Summarization/presentation/summarizing_process_screen.dart';

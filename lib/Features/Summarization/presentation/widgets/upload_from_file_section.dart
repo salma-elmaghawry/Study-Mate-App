@@ -9,6 +9,7 @@ import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Core/di/dependency_injection.dart';
+import 'package:study_mate/Core/helpers/spacing.dart';
 import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
 import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
 import 'package:study_mate/Features/Summarization/presentation/widgets/file_uploaded_dialog.dart';
@@ -62,7 +63,7 @@ class UploadNewFileSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Upload", style: AppTextStyles.quicksand18BoldB()),
-        SizedBox(height: 5.h),
+        verticalSpace(10),
         Card(
           color: AppColors.white,
           elevation: 1,
