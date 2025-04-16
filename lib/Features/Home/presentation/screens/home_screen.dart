@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(50),
-            child: CustomAppbar(),
+            child: CustomAppbar(ifIneedUserIcon: true, name: "Hello ....."),
           ),
           body: HomeBody(),
         ),
