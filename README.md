@@ -28,7 +28,7 @@ StudyMate is an all-in-one workspace tailored to enhance the learning experience
 ---
 > 🚧 **This app is still in development. More features and improvements are coming soon!**
 
-🎥 **[Live Demo](https://youtube.com/shorts/YTNy7eDLs_s?si=ZPdCpWWV584S3az9)** – Check out the current progress!
+🎥 **[Live Demo](https://youtube.com/shorts/PV7d2dtSsLI?si=RoqVteJ5-s0q1-U2)** – Check out the current progress!
 
 
 ---
