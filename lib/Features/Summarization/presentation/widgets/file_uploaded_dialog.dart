@@ -1,11 +1,25 @@
+import 'dart:io';
+
+import 'package:open_file/open_file.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Core/di/dependency_injection.dart';
+import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
+import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
+import 'package:study_mate/Features/Summarization/presentation/summarizing_process_screen.dart';
 
 class FileUploadDialog extends StatelessWidget {
   final String fileName;
-  const FileUploadDialog({super.key, required this.fileName});
+  final File file;
+
+  const FileUploadDialog({
+    super.key,
+    required this.fileName,
+    required this.file,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +77,6 @@ class FileUploadDialog extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(width: 10),
               Expanded(
                 child: ElevatedButton(
@@ -74,13 +87,24 @@ class FileUploadDialog extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    
-                    // Add your summarize logic here
-                    Navigator.pop(context);
+                    Navigator.pop(context); // close dialog first
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder:
+                          (_) => BlocProvider.value(
+                            value: context.read<SummarizeCubit>(),
+                            child: const _SummarizeDialog(),
+                          ),
+                    );
+    
+                    context.read<SummarizeCubit>().summarizePdf(file);
                   },
                   child: Text(
                     "Summarize",
-                    style: AppTextStyles.poppins14Bold(color: AppColors.white),
+                    style: AppTextStyles.poppins14Bold(
+                      color: AppColors.white,
+                    ),
                   ),
                 ),
               ),
@@ -88,6 +112,36 @@ class FileUploadDialog extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _SummarizeDialog extends StatelessWidget {
+  const _SummarizeDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<SummarizeCubit, SummarizeState>(
+      listener: (context, state) async {
+        if (state is SummarizeSuccess) {
+          Navigator.pop(context); // Close loading
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Summarization completed!")),
+          );
+          await OpenFile.open(state.file.path);
+        } else if (state is SummarizeError) {
+          Navigator.pop(context);
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text("Error: ${state.message}")));
+        }
+      },
+      builder: (context, state) {
+        if (state is SummarizeLoading) {
+          return SummarizingProcessScreen();
+        }
+        return const SizedBox.shrink();
+      },
     );
   }
 }

@@ -1,10 +1,16 @@
+import 'dart:io';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show BlocProvider, ReadContext;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/Theme/app_images.dart';
 import 'package:study_mate/Core/Theme/app_text_styles.dart';
+import 'package:study_mate/Core/di/dependency_injection.dart';
+import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
+import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
 import 'package:study_mate/Features/Summarization/presentation/widgets/file_uploaded_dialog.dart';
 
 class UploadNewFileSection extends StatelessWidget {
@@ -24,7 +30,14 @@ class UploadNewFileSection extends StatelessWidget {
         if (filePath != null) {
           showDialog(
             context: context,
-            builder: (_) => FileUploadDialog(fileName: fileName),
+            builder:
+                (_) => BlocProvider(
+                  create: (_) => SummarizeCubit(getIt<SummarizeRepo>()),
+                  child: FileUploadDialog(
+                    fileName: fileName,
+                    file: File(filePath),
+                  ),
+                ),
           );
         } else {
           ScaffoldMessenger.of(

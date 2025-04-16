@@ -1,6 +1,17 @@
-// part of 'summarization_cubit.dart';
+part of 'summarization_cubit.dart';
 
-// @freezed
-// class SummarizationState with _$SummarizationState {
-//   const factory SummarizationState.initial() = _Initial;
-// }
+abstract class SummarizeState {}
+
+class SummarizeInitial extends SummarizeState {}
+
+class SummarizeLoading extends SummarizeState {}
+
+class SummarizeSuccess extends SummarizeState {
+  final File file;
+  SummarizeSuccess(this.file);
+}
+
+class SummarizeError extends SummarizeState {
+  final String message;
+  SummarizeError(this.message);
+}

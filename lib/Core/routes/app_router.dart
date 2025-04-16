@@ -18,7 +18,11 @@ import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Music/music_screen.dart';
 import 'package:study_mate/Features/Notes/notes_screen.dart';
 import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';
-import 'package:study_mate/Features/Summarization/summarization_screen.dart';
+import 'package:study_mate/Features/Summarization/data/Summarization_repo.dart';
+import 'package:study_mate/Features/Summarization/domain/cubit/summarization_cubit.dart';
+import 'package:study_mate/Features/Summarization/presentation/summarization_screen.dart';
+import 'package:study_mate/Features/Summarization/presentation/open_summarized_pdf_screen.dart';
+import 'package:study_mate/Features/Summarization/presentation/summarizing_process_screen.dart';
 import 'package:study_mate/Features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
@@ -75,13 +79,25 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => VerifyOtpScreen(email: email));
       case Routes.verifyPasswordOtp:
         final email = settings.arguments as String;
-        return MaterialPageRoute(builder: (_) => VerifyPasswordOtpScreen(email: email));
+        return MaterialPageRoute(
+          builder: (_) => VerifyPasswordOtpScreen(email: email),
+        );
       case Routes.resetPassword:
-      final args = settings.arguments as Map<String, dynamic>;
-        return MaterialPageRoute(builder: (_) => ResetPasswordScreen(
-          email: args['email'],
-          code: args['code'],
-        ));
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder:
+              (_) =>
+                  ResetPasswordScreen(email: args['email'], code: args['code']),
+        );
+
+      //Summarization
+      case Routes.summarizationScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => SummarizeCubit(getIt<SummarizeRepo>()),
+            child: SummarizationScreen(),
+          ),
+        );
 
       default:
         return MaterialPageRoute(

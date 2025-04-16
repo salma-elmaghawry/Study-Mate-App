@@ -1,19 +1,36 @@
-
+import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:study_mate/Core/networking/api_constants.dart';
 import 'package:study_mate/Core/networking/api_service.dart';
 
-class SummarizationRepository {
+class SummarizeRepo {
   final ApiService apiService;
-  SummarizationRepository(this.apiService);
+  final Dio dio;
 
-  Future<String> summarizeFile(String text) async {
+  SummarizeRepo(this.apiService, this.dio);
+
+  Future<File> summarizePdf(File file) async {
     try {
-      final response = await apiService.post(
-        ApiConstants.summarize,
-        data: {'text': text},
+      final formData = FormData.fromMap({
+        'file': await MultipartFile.fromFile(file.path, filename: 'upload.pdf'),
+      });
+
+      final response = await dio.post(
+        ApiConstants.summarizeAsPdf,
+        data: formData,
+        options: Options(
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+          responseType: ResponseType.bytes,
+        ),
       );
-      return response.data['summary'];
+
+      final bytes = response.data;
+      final directory = await getApplicationDocumentsDirectory();
+      final savedFile = File('${directory.path}/summary_${DateTime.now().millisecondsSinceEpoch}.pdf');
+      return await savedFile.writeAsBytes(bytes);
     } on DioException catch (e) {
       throw Exception(e.response?.data['message'] ?? 'Summarization failed');
     }

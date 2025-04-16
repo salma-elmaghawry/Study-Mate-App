@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:study_mate/Core/Theme/app_text_styles.dart';
 import 'package:study_mate/Features/Summarization/presentation/widgets/upload_from_file_section.dart';
 
 class SummarizationScreen extends StatelessWidget {

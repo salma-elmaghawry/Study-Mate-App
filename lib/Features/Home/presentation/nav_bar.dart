@@ -9,7 +9,7 @@ import 'package:study_mate/Core/widgets/speeddialwidget.dart';
 import 'package:study_mate/Features/FlashCards/flash_cards.dart';
 import 'package:study_mate/Features/Home/presentation/screens/home_screen.dart';
 import 'package:study_mate/Features/Pomodoro/pomodoro_screen.dart';
-import 'package:study_mate/Features/Summarization/summarization_screen.dart';
+import 'package:study_mate/Features/Summarization/presentation/summarization_screen.dart';
 
 class NavBar extends StatefulWidget {
   @override
