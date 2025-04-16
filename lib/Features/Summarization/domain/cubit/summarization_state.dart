@@ -6,10 +6,7 @@ class SummarizeInitial extends SummarizeState {}
 
 class SummarizeLoading extends SummarizeState {}
 
-class SummarizeSuccess extends SummarizeState {
-  final File file;
-  SummarizeSuccess(this.file);
-}
+class SummarizeSuccess extends SummarizeState {}
 
 class SummarizeError extends SummarizeState {
   final String message;

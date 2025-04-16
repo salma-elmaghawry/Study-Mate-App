@@ -12,11 +12,13 @@ class SummarizeCubit extends Cubit<SummarizeState> {
 
   Future<void> summarizePdf(File file) async {
     emit(SummarizeLoading());
-    
+    print("Start summarizing...");
+
     try {
-      final summarizedFile = await summarizeRepo.summarizePdf(file);
-      emit(SummarizeSuccess(summarizedFile));
+      await summarizeRepo.summarizePdf(file);
+      emit(SummarizeSuccess());
     } catch (e) {
+      print("Error: $e");
       emit(SummarizeError(e.toString()));
     }
   }

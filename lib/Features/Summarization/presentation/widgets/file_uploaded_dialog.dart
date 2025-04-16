@@ -97,14 +97,15 @@ class FileUploadDialog extends StatelessWidget {
                             child: const _SummarizeDialog(),
                           ),
                     );
-    
-                    context.read<SummarizeCubit>().summarizePdf(file);
+
+                    final cubit = context.read<SummarizeCubit>();
+                    if (cubit.state is! SummarizeLoading) {
+                      cubit.summarizePdf(file);
+                    }
                   },
                   child: Text(
                     "Summarize",
-                    style: AppTextStyles.poppins14Bold(
-                      color: AppColors.white,
-                    ),
+                    style: AppTextStyles.poppins14Bold(color: AppColors.white),
                   ),
                 ),
               ),
@@ -125,10 +126,11 @@ class _SummarizeDialog extends StatelessWidget {
       listener: (context, state) async {
         if (state is SummarizeSuccess) {
           Navigator.pop(context); // Close loading
+          await Future.delayed(const Duration(milliseconds: 100));
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Summarization completed!")),
           );
-          await OpenFile.open(state.file.path);
+          // OpenFile.open(state.file.path);
         } else if (state is SummarizeError) {
           Navigator.pop(context);
           ScaffoldMessenger.of(
