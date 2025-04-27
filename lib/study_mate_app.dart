@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_mate/Core/Theme/app_colors.dart';
 import 'package:study_mate/Core/routes/app_router.dart';
 import 'package:study_mate/Core/routes/routes.dart';
+import 'package:study_mate/config/cache/cache_const.dart';
 
 class StudyMateApp extends StatelessWidget {
   const StudyMateApp({super.key});
@@ -18,7 +19,7 @@ class StudyMateApp extends StatelessWidget {
 
         theme: ThemeData(scaffoldBackgroundColor: AppColors.background),
         onGenerateRoute: AppRouter().generateRoute,
-        initialRoute: Routes.onboarding,
+        initialRoute: isLoggedIn ? Routes.home : Routes.nav_bar,
       ),
     );
   }
