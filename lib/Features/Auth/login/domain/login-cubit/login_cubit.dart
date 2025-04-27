@@ -47,8 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
     apiService.setTokenAfterLogin(token);
   }
 
-  
- 
-
-  
+  void clearUserToken() async {
+    await CacheHelper.delete(key: CacheConstants.userToken);
+  }
 }

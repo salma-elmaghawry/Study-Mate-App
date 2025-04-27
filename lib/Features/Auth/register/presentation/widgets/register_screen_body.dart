@@ -27,6 +27,8 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
             ),
           );
         } else if (state is RegisterSuccess) {
+          
+          
           showCustomDialog(
             context,
             title: "Success",
@@ -37,6 +39,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 Routes.verifyOtp,
+
                 (route) => false,
                 arguments: state.email,
               );

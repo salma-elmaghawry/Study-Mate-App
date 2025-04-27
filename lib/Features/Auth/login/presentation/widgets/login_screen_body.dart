@@ -38,7 +38,11 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
               Navigator.pop(context);
               Navigator.pushNamedAndRemoveUntil(
                 context,
-                Routes.nav_bar,
+                Routes.nav_bar, 
+                arguments: {
+                  'token': state.response.token,
+                },
+
                 (route) => false,
               );
             },
