@@ -5,6 +5,8 @@ import 'package:study_mate/Core/di/dependency_injection.dart';
 import 'package:study_mate/Core/networking/api_service.dart';
 import 'package:study_mate/Features/Auth/register/data/models/register_model.dart';
 import 'package:study_mate/Features/Auth/register/data/register_repo.dart';
+import 'package:study_mate/config/cache/cache_const.dart';
+import 'package:study_mate/config/cache/cache_helper.dart';
 
 part 'register_state.dart';
 
@@ -30,6 +32,7 @@ class RegisterCubit extends Cubit<RegisterState> {
           confirmPassword: confirmPassword,
         ),
       );
+       await CacheHelper.set(key: CacheConstants.userFirstName, value: firstName);
       emit(RegisterSuccess(response,email));
     } catch (error) {
       String errorMessage = error.toString();

@@ -56,7 +56,7 @@ class CacheHelper {
   }
 
   ///save the value of the key in the secure storage
-  static Future<void> saveSecureData({
+  static Future<void> setSecureData({
     required String key,
     required String value,
   }) async {
