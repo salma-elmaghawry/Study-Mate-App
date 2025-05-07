@@ -30,6 +30,7 @@ environment:
 dependencies:
   awesome_dialog: ^3.2.1
   bloc: ^9.0.0
+  bloc_test: ^10.0.0
   build_runner: ^2.4.15
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
@@ -52,6 +53,7 @@ dependencies:
   http_parser: ^4.1.2
   json_annotation: ^4.9.0
   json_serializable: ^6.9.4
+  mocktail: ^1.0.4
   open_file: ^3.5.10
   permission_handler: ^12.0.0+1
   pin_code_fields: ^8.0.1
