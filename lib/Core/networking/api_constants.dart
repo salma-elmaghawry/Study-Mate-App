@@ -1,7 +1,7 @@
 class ApiConstants{
 
   //Base URL
-  static const String apiBaseUrl = "https://study-mate.azurewebsites.net/api/";
+  static const String apiBaseUrl = "https://e044-105-197-202-73.ngrok-free.app/api/";
   //Authentication
   static const String login = "Authentication/login";
   static const String register = "Authentication/Register";

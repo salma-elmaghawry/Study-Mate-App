@@ -27,6 +27,8 @@ class ApiService {
 
   Future<void> _initializeHeaders() async {
     dio.options.headers = {
+      //conection timeout: const Duration(milliseconds: 5000),
+     // receive timeout: const Duration(milliseconds: 3000),
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer ${await CacheHelper.getSecureData(key: CacheConstants.userToken)}',
