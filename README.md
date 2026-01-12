@@ -26,8 +26,6 @@ StudyMate is an all-in-one workspace tailored to enhance the learning experience
 - **Academic Chatbot**: Get instant answers, study tips, and explanations from an intelligent AI assistant—your 24/7 study buddy.
 
 ---
-> 🚧 **This app is still in development. More features and improvements are coming soon!**
-
 🎥 **[Live Demo](https://youtu.be/iyDsESiW-v4?si=3BAMfK_dWLRRsTNg)** – Check out the current progress!
 
 
